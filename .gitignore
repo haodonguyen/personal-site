@@ -1,5 +1,4 @@
-# Ignore all node_modules directories
-node_modules/
+
 
 # Environment variables
 .env
@@ -18,12 +17,13 @@ node_modules/
 .vercel/
 
 # Backend-specific
-backend/build/
+backend/node_modules
 
 # Frontend-specific
 frontend/build/
 frontend/dist/
 frontend/.vite/
+frontend/node_modules
 
 # Editor and IDE files
 .vscode/
