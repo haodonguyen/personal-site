@@ -1,17 +1,151 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-@import "tailwindcss";
-
-@theme{
-  --font-display: 'Poppins', sans-serif;
-  --breakpoint-3xl: 1920px;
-  --color-primary: #1368EC;
+:root {
+  /* Primary Ethereal Blue Palette */
+  --primary-light: #E0F4FF;  /* Light ethereal blue */
+  --primary: #89CFF3;        /* Main ethereal blue */
+  --primary-dark: #00A9FF;   /* Deep ethereal blue */
+  --accent: #164863;         /* Dark navy accent */
+  
+  /* Supporting Colors */
+  --text-dark: #1B4965;      /* Text dark blue */
+  --text-light: #BEE9E8;     /* Light text blue */
+  --background: #F5FCFF;     /* Super light background */
+  --white: #FFFFFF;          /* Pure white */
 }
-@layer base{
-  html{
-    font-family: var(--font-display);
+
+/* Text colors - without hover effects */
+.text-dark {
+  color: var(--text-dark) !important;
+}
+
+.text-primary {
+  color: var(--primary) !important;
+}
+
+.text-secondary {
+  color: var(--accent) !important;
+}
+
+/* Gradient text for name */
+.text-gradient {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Buttons - keep hover effects for interactive elements */
+.btn-primary {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: var(--white);
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: var(--primary-dark);
+  border-color: var(--primary-dark);
+  box-shadow: 0 4px 15px rgba(0, 169, 255, 0.3);
+}
+
+/* Background */
+.bg-light {
+  background: var(--background) !important;
+}
+
+/* Simple card styling */
+.card {
+  background: var(--white);
+  border: 1px solid rgba(137, 207, 243, 0.1);
+}
+
+/* Social icons - keep subtle hover for interactive elements */
+.hover-lift {
+  transition: transform 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-3px);
+}
+
+/* Typing animation cursor */
+.typing::after {
+  background-color: var(--primary);
+}
+
+/* Form controls */
+.form-control {
+  border-color: var(--primary-light);
+}
+
+.form-control:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 0.25rem rgba(137, 207, 243, 0.25);
+}
+
+/* Skills section styling */
+.skill-category {
+  font-size: 2.2rem !important;
+  letter-spacing: 1px;
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.skill-item {
+  transition: all 0.3s ease;
+  border: 1px solid rgba(137, 207, 243, 0.2);
+}
+
+.skill-item:hover {
+  transform: translateX(10px);
+  background-color: rgba(137, 207, 243, 0.2) !important;
+  border-color: #89CFF3;
+}
+
+.card {
+  box-shadow: 0 5px 20px rgba(137, 207, 243, 0.1) !important;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* Category headings */
+.display-6 {
+  font-size: 2rem !important;
+  background: linear-gradient(135deg, #89CFF3, #00A9FF);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  padding-bottom: 0.5rem;
+  border-bottom: 3px solid #E0F4FF;
+  margin-bottom: 1.5rem !important;
+}
+
+/* Individual skill items */
+.card-body .bg-light {
+  transition: all 0.3s ease;
+  border: 1px solid rgba(137, 207, 243, 0.2);
+}
+
+.card-body .bg-light:hover {
+  background-color: #E0F4FF !important;
+  border-color: #89CFF3;
+}
+
+/* Card shadow */
+.shadow-sm {
+  box-shadow: 0 5px 20px rgba(137, 207, 243, 0.1) !important;
+}
+
+/* Responsive text size */
+@media (max-width: 768px) {
+  .display-6 {
+    font-size: 1.75rem !important;
   }
-  body{
-    background-color: #fcfbfc;
-    overflow: hidden;
+  .skill-category {
+    font-size: 1.8rem !important;
   }
 }
